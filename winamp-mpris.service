@@ -1,10 +1,14 @@
 [Unit]
-Description=Winamp MPRIS Bridge
-After=graphical-session.target
+Description=Winamp MPRIS Bridge (user service)
+After=dbus-user-session.service
 
 [Service]
-ExecStart=/usr/bin/python /home/%u/mpris-winamp/winamp_mpris.py
+Type=simple
+# Ejecutable instalado por el paquete
+ExecStart=/usr/bin/winamp-mpris
 Restart=on-failure
+# Si quieres forzar la ruta interna a clamp.exe para Wine puedes descomentar:
+# Environment=WINAMP_CLAMP=Z:\\usr\\share\\winamp-mpris\\clamp.exe
 
 [Install]
 WantedBy=default.target

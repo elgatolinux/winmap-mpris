@@ -5,9 +5,9 @@ from dbus_next.aio import MessageBus
 from dbus_next.service import ServiceInterface, method, dbus_property
 from dbus_next import Variant
 from dbus_next.service import PropertyAccess
+import os
 
-
-CLAMP_PATH = "C:\\Program Files (x86)\\CLAmp.exe"
+CLAMP_PATH = os.environ.get("WINAMP_CLAMP", r"Z:\usr\share\winamp-mpris\clamp.exe")
 
 def run_clamp(arg):
     subprocess.Popen([
