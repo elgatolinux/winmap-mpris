@@ -1,0 +1,10 @@
+[Unit]
+Description=Winamp MPRIS Bridge
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/python /home/%u/mpris-winamp/winamp_mpris.py
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
