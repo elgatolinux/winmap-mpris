@@ -1,0 +1,3 @@
+#!/bin/bash
+systemctl --user enable winamp-mpris.service
+systemctl --user start winamp-mpris.service
